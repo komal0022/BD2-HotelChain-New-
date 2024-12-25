@@ -231,7 +231,7 @@ app.get("/hotels/sort/pricing", (req, res) =>{
   else{
      result = hotelsCopy.sort(sortHighToLowPrice);
   }
-  res.json({ Hotels: result});
+  res.json({ hotels: result});
 });
 
 //Endpoint 2: Get the hotels sorted based on their Ratings
@@ -251,7 +251,7 @@ app.get("/hotels/sort/rating", (req, res) =>{
   else{
      result = hotelsCopy.sort(sortHighToLowRating);
   }
-  res.json({ Hotels: result});
+  res.json({ hotels: result});
 });
 
 //Endpoint 3: Get the Hotels sorted based on their Reviews
@@ -271,7 +271,7 @@ app.get("/hotels/sort/reviews", (req, res) =>{
   else{
      result = hotelsCopy.sort(sortHighToLowReviews);
   }
-  res.json({ Hotels: result});
+  res.json({ hotels: result});
 });
 
 //Endpoint 4: Filter the hotels based on the Hotel Amenity
@@ -281,7 +281,7 @@ function filterByAmenity(hotelObj, amenity){
 app.get('/hotels/filter/amenity', (req, res) => {
   let amenity = req.query.amenity;
   let result = hotels.filter((hotelObj) => filterByAmenity(hotelObj, amenity));
-  res.json({Hotels: result});
+  res.json({ hotels: result});
 });
 
 //Endpoint 5: Filter the hotels based on the selected Country
@@ -291,7 +291,7 @@ function filterByCountry(hotelObj, country){
 app.get('/hotels/filter/country', (req, res) => {
   let country = req.query.country;
   let result = hotels.filter((hotelObj) => filterByCountry(hotelObj, country));
-  res.json({Hotels: result});
+  res.json({hotels: result});
 });
 
 //Endpoint 6: Filter the hotels based on the selected Category
@@ -301,7 +301,7 @@ function filterByCategory(hotelObj, category){
 app.get('/hotels/filter/category', (req, res) => {
   let category = req.query.category;
   let result = hotels.filter((hotelObj) => filterByCategory(hotelObj, category));
-  res.json({Hotels: result});
+  res.json({hotels: result});
 });
 
 //Endpoint 7: Send all hotels
